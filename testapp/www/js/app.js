@@ -22,7 +22,7 @@ var app = angular.module('starter', ['ionic'])
     }
   });
 })
-app.service('PouchService', function() {
+app.service('PouchService', function( $ionicPopup) {
 
   var testDb = new PouchDB('testDb');
 
@@ -70,7 +70,14 @@ app.service('PouchService', function() {
         })
         .catch(function(err) {
 
-          console.log(err);
+          console.log("!!!" + err);
+          var alertPopup = $ionicPopup.alert({
+             title: 'Alert!',
+             template: err.message
+          });
+          alertPopup.then(function(res){
+            console.log("Thanks 4 your time :)" );
+          });
 
         });
 
@@ -109,7 +116,9 @@ app.controller('MainCtrl', function($scope, PouchService) {
       console.log(JSON.stringify(resp));
 
     }).catch(function(err){
-      console.log(err.message);
+      console.log("!!!" + err.message);
+     
+      
     })
   }
 });

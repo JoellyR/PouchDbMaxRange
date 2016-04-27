@@ -1,1 +1,13 @@
 /* Empty. Add your own CSS if you like */
+.centerWrapper{
+	margin-left:auto !important; 
+	margin-right:auto !important; 
+	text-align:center !important;
+	    display: block !important;
+}
+.inputSize{
+	padding-left: 20% !important; 
+	padding-right:20% !important;
+	margin-top:10% !important;
+	margin-bottom:10% !important;
+}
